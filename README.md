@@ -34,3 +34,9 @@ gcc main.c -o exc
 gcc main.c -o exc.exe
 .\exc.exe
 ```
+
+# References
+
+[Images PGM](https://people.sc.fsu.edu/~jburkardt/data/pgma/pgma.html)
+
+[Kernels](https://en.wikipedia.org/wiki/Kernel_(image_processing))

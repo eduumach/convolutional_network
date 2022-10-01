@@ -13,7 +13,7 @@ int main(){
 
 
     //open kernel
-    FILE* kernel_file = fopen("./kernels/gaussian_blur5p5.txt", "r");
+    FILE* kernel_file = fopen("./kernels/unsharp_masking5p5.txt", "r");
 
     fscanf(kernel_file, "%d %d %f %f", &kernel_line, &kernel_column, &kernel_divider, &kernel_dividend);
     float kernel[kernel_line][kernel_column];
