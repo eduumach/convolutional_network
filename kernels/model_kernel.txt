@@ -1,0 +1,22 @@
+line column      |
+divider dividend | -> divider/dividend
+your matrix      |
+------------------
+
+examples:
+
+________
+3 3    | 3x3
+1 1    | 1/1 = 1
+0 0 0  |     | 0 0 0 |   | 0 0 0 |
+0 1 0  | 1 x | 0 1 0 | = | 0 1 0 | = kernel identity.
+0 0 0  |     | 0 0 0 |   | 0 0 0 |
+________
+
+________
+3 3    | 3x3
+1 9    | 1/9
+1 1 1  |      | 1 1 1 |
+1 1 1  |1/9 x | 1 1 1 | = kernel box blur
+1 1 1  |      | 1 1 1 |
+________
