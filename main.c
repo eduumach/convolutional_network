@@ -6,19 +6,22 @@
 
 int main(){
 
-    int column, line, column_sub_matrix, line_sub_matrix, sum_of_products, image_line, image_column,
+    int column, line, column_sub_matrix, line_sub_matrix, image_line, image_column,
     maxValue, kernel_line, kernel_column, count_line, count_column, convolutional_line, convolutional_column, edge;
+
+    float kernel_valor, kernel_divider, kernel_dividend, sum_of_products;
 
 
     //open kernel
-    FILE* kernel_file = fopen("./kernels/sharpen.txt", "r");
+    FILE* kernel_file = fopen("./kernels/gaussian_blur5p5.txt", "r");
 
-    fscanf(kernel_file, "%d %d", &kernel_line, &kernel_column);
-    int kernel[kernel_line][kernel_column];
+    fscanf(kernel_file, "%d %d %f %f", &kernel_line, &kernel_column, &kernel_divider, &kernel_dividend);
+    float kernel[kernel_line][kernel_column];
 
     for(column = 0; column < kernel_column; column++){
         for(line = 0; line < kernel_line; line++){
-            fscanf(kernel_file, "%d", &kernel[column][line]);
+            fscanf(kernel_file, "%f", &kernel_valor);
+            kernel[column][line] = (kernel_divider/kernel_dividend)* kernel_valor;
         }
     }
     // close kernel file
@@ -69,7 +72,7 @@ int main(){
                 }
                 count_line++;
             }
-        convolutional[column - 1][line - 1] = sum_of_products;
+        convolutional[column - 1][line - 1] = (int)sum_of_products;
         }
     }
 
