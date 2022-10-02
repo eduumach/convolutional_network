@@ -80,7 +80,7 @@ int main(){
     FILE* convolutional_image = fopen("convolutional.ascii.pgm", "w");
 
     fprintf(convolutional_image, "P2\n");
-    fprintf(convolutional_image, "%d %d \n", image_line - 2, image_column - 2);
+    fprintf(convolutional_image, "%d %d \n", convolutional_line, convolutional_column);
     fprintf(convolutional_image, "%d \n", maxValue);
 
     for(column = 0; column < convolutional_column; column++){
@@ -88,7 +88,7 @@ int main(){
             if(convolutional[line][column] < 0){
                 fprintf(convolutional_image, "%d ", 0);
             } else if(convolutional[line][column] > 255){
-                fprintf(convolutional_image, "%d ", 255);
+                fprintf(convolutional_image, "%d ", maxValue);
             } else{
                 fprintf(convolutional_image, "%d ", convolutional[line][column]);
             }
