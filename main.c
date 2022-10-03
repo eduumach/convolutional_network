@@ -87,7 +87,7 @@ int main(){
         for(line = 0; line < convolutional_line; line++){
             if(convolutional[line][column] < 0){
                 fprintf(convolutional_image, "%d ", 0);
-            } else if(convolutional[line][column] > 255){
+            } else if(convolutional[line][column] > maxValue){
                 fprintf(convolutional_image, "%d ", maxValue);
             } else{
                 fprintf(convolutional_image, "%d ", convolutional[line][column]);
